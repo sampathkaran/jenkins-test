@@ -21,7 +21,7 @@ pipeline {
                 }
             }
         stage('print message'){
-            when expression{GIT_COMMIT_USER != vijay}
+            when expression{${GIT_COMMIT_USER} != vijay}
             steps {
                 echo "hey ${GIT_COMMIT_USER}"
             }  
