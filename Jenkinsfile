@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment{
+      GIT_COMMIT_USER = ''
+    }
     stages {
 
         stage('Collect agent info'){
@@ -18,7 +21,7 @@ pipeline {
         stage('print message'){
             when{
                 expression{
-                   return ${GIT_COMMIT_USER} != 'vijay';
+                      GIT_COMMIT_USER != 'vijay'
                    }
                 }
             steps {
