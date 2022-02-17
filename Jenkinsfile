@@ -21,8 +21,9 @@ pipeline {
                 }
             }
         stage('print message'){
-            echo "hey ${GIT_COMMIT_USER}"
-        
+            steps {
+                echo "hey ${GIT_COMMIT_USER}"
+            }  
         }
       }
 
