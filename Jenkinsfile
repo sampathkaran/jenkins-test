@@ -11,16 +11,20 @@ pipeline {
             steps {
                  dir("${WORKSPACE}/code"){
                  script {
-                    GIT_COMMIT_EMAIL = sh (
+                    GIT_COMMIT_USER = sh (
                         script: 'git --no-pager show -s --format=\'%an\'',
                         returnStdout: true
                     ).trim()
-                    echo "Git committer email: ${GIT_COMMIT_EMAIL}"
+                    echo "Git committer email: ${GIT_COMMIT_USER}"
                    }
                  }
                 }
             }
+        stage('print message'){
+            echo "hey ${GIT_COMMIT_USER}"
+        
         }
+      }
 
         
     }
