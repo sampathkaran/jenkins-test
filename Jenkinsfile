@@ -19,6 +19,7 @@ pipeline {
             when{
                 expression{
                     ${GIT_COMMIT_USER} != 'vijay'
+                   }
                 }
             steps {
                 echo "hey ${GIT_COMMIT_USER}"
