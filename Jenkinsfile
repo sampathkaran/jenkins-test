@@ -21,7 +21,7 @@ pipeline {
         stage('print message'){
             when{
                 expression{
-                      GIT_COMMIT_USER != 'sampath karan'
+                      GIT_COMMIT_USER != 'sampathkaran'
                    }
                 }
             steps {
